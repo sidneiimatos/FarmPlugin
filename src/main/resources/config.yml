@@ -1,0 +1,11 @@
+mysql:
+  host: 'localhost'
+  user: 'root'
+  password: ''
+  database: 'legado'
+comandos:
+  - 'money set %player% %quantia%'
+  - 'cash set %player% %quantia%'
+blocos:
+  - '1:1'
+warp:

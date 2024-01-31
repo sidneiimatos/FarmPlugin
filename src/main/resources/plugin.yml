@@ -1,0 +1,5 @@
+name: FarmPlugin
+version: '${project.version}'
+main: io.github.sidneiimatos.farmplugin.FarmPlugin
+commands:
+  farm:

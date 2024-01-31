@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="FarmPlugin">
+    <output-path>$PROJECT_DIR$/../../Area de Trabalho/Desenvolvendo/Teste/plugins</output-path>
+    <root id="archive" name="FarmPlugin.jar">
+      <element id="module-output" name="FarmPlugin" />
+    </root>
+  </artifact>
+</component>

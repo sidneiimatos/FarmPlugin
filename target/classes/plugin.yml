@@ -1,0 +1,5 @@
+name: FarmPlugin
+version: '1.0-SNAPSHOT'
+main: io.github.sidneiimatos.farmplugin.FarmPlugin
+commands:
+  farm:
