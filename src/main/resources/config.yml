@@ -3,6 +3,17 @@ mysql:
   user: 'root'
   password: ''
   database: 'legado'
+recompensas:
+  item1:
+    title: ''
+    sub_title: ''
+    comandos:
+      - ''
+  item2:
+    title: ''
+    sub_title: ''
+    comandos:
+      - ''
 comandos:
   - 'money set %player% %quantia%'
   - 'cash set %player% %quantia%'

@@ -58,6 +58,15 @@ public class FarmObject {
     public void setMelon(int melon) {
         this.melon = melon;
     }
+    public void addDrops(String type, int drop) {
+        if (type.equals("melon")) {
+            this.melon += drop;
+        } else if (type.equals("sugar")) {
+            this.sugar += drop;
+        } else if (type.equals("fungo")) {
+            this.fungo += drop;
+        }
+    }
 
     public int getSugar() {
         return sugar;

@@ -1,9 +1,8 @@
 package io.github.sidneiimatos.farmplugin.database;
 
+import io.github.sidneiimatos.farmplugin.FarmPlugin;
 import io.github.sidneiimatos.farmplugin.farm.FarmObject;
 import org.bukkit.Bukkit;
-
-import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -17,6 +16,7 @@ public class Metodos {
             ResultSet rs = ps.executeQuery();
             while(rs.next()) {
                 FarmObject farmObject = new FarmObject(rs.getString("username"), rs.getInt("fungo_qtd"), rs.getInt("melon_qtd"), rs.getInt("sugar_qtd"), rs.getInt("blocos"), rs.getInt("limite"), rs.getBoolean("farming"));
+                FarmPlugin.getInstance().getFarmcache().getCache().put(rs.getString("username"), farmObject);
                 /*String owner = rs.getString("username");
                 int fungo_qtd = rs.getInt("fungo_qtd"), melon_qtd = rs.getInt("melon_qtd"), sugar_qtd = rs.getInt("sugar_qtd"), blocos = rs.getInt("blocos"), limite = rs.getInt("limite");
                 boolean farming = rs.getBoolean("farming");
@@ -43,7 +43,7 @@ public class Metodos {
         return false;
     }
 
-    public static void createAccount(String uuid, String player) {
+    public static void createAccount(String player) {
         try {
             PreparedStatement ps = MySQL.connection.prepareStatement("INSERT INTO farmplugin (username, fungo_qtd, melon_qtd, sugar_qtd, blocos, limite, farming) values (?, ?, ?, ?, ?, ?, ?)");
             ps.setString(1, player);
