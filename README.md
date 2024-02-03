@@ -1,1 +1,1 @@
-Desenvolvendo uma sistema de farm para servidores de minecraft
+Desenvolvendo um sistema de farm para servidores de minecraft
