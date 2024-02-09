@@ -3,17 +3,32 @@ mysql:
   user: 'root'
   password: ''
   database: 'legado'
+porcentagem: 10
 recompensas:
-  item1:
-    title: ''
-    sub_title: ''
+  key:
+    title: '&6&lKEY RARA'
+    sub_title: '&fVocê ganho uma key rara'
+    position: 1
     comandos:
-      - ''
-  item2:
-    title: ''
-    sub_title: ''
+      - 'comando1 aqui'
+      - 'comando2 aqui'
+      - 'comando3 aqui'
+  caixa:
+    title: '&6&lCAIXA AVANÇADA'
+    sub_title: '&fVocê ganho uma Caixa Avançada'
+    position: 2
     comandos:
-      - ''
+      - 'comando1 aqui'
+      - 'comando2 aqui'
+      - 'comando3 aqui'
+  cash:
+    title: '&6&lCASH'
+    sub_title: '&fVocê ganhou 1.000 de cash'
+    position: 3
+    comandos:
+      - 'comando1 aqui'
+      - 'comando2 aqui'
+      - 'comando3 aqui'
 comandos:
   - 'money set %player% %quantia%'
   - 'cash set %player% %quantia%'

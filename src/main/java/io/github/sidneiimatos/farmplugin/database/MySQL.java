@@ -26,7 +26,7 @@ public class MySQL {
         try {
             Class.forName("com.mysql.jdbc.Driver");
             connection = DriverManager.getConnection("jdbc:mysql://"+ this.host + "/"+ this.database, this.user, this.password);
-            (statement = connection.createStatement()).execute("CREATE TABLE IF NOT EXISTS farmplugin (username VARCHAR(16) NOT NULL, fungo_qtd INT NOT NULL, melon_qtd INT NOT NULL, sugar_qtd INT NOT NULL, blocos INT NOT NULL, limite INT NOT NULL, farming BOOLEAN NOT NULL)");
+            (statement = connection.createStatement()).execute("CREATE TABLE IF NOT EXISTS farmplugin (username VARCHAR(16) NOT NULL, fungo_qtd INT NOT NULL, melon_qtd INT NOT NULL, sugar_qtd INT NOT NULL, blocos INT NOT NULL, limite INT NOT NULL, farming BOOLEAN NOT NULL, eficiency DOUBLE NOT NULL, fortune DOUBLE NOT NULL, pressa DOUBLE NOT NULL, sortudo DOUBLE NOT NULL)");
         } catch (SQLException | ClassNotFoundException e) {
             e.printStackTrace();
         }

@@ -18,6 +18,7 @@ import java.util.Map;
 
 public class ItemBuilder {
     private ItemStack is;
+    private ItemMeta meta;
 
     public ItemBuilder(Material m) {
         this(m, 1);
@@ -33,6 +34,12 @@ public class ItemBuilder {
 
     public ItemBuilder(Material m, int quantia, byte durabilidade) {
         this.is = new ItemStack(m, quantia, durabilidade);
+    }
+
+    public ItemBuilder(String url) {
+        Heads hd = new Heads();
+        this.is = Heads.getSkull(url);
+        this.meta = this.is.getItemMeta();
     }
 
     public ItemBuilder(Material m, int quantia, int durabilidade) {

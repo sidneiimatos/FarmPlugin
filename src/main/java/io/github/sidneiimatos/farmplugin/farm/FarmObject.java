@@ -81,7 +81,7 @@ public class FarmObject {
     }
 
     public void setBlocos(int blocos) {
-        this.blocos = blocos;
+        this.blocos += blocos;
     }
 
     public int getLimite() {

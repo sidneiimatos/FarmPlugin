@@ -39,7 +39,7 @@ public class FarmInventory {
     public FarmInventory(Player p) {
         p.closeInventory();
         Inventory inv = Bukkit.createInventory(null, 27, "RankUP - Farm");
-        if (FarmPlugin.getInstance().getFarmcache().getCache().get(p.getName()).isFarming() == true) {
+        if (FarmPlugin.getInstance().getFarmcache().getCache().get(p.getName()).isFarming()) {
             inv.setItem(11, LEAVE);
         } else {
             inv.setItem(11, JOIN);

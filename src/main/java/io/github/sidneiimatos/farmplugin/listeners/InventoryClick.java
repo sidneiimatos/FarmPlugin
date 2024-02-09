@@ -5,7 +5,9 @@ import io.github.sidneiimatos.farmplugin.database.Metodos;
 import io.github.sidneiimatos.farmplugin.inventory.RewardInventory;
 import io.github.sidneiimatos.farmplugin.inventory.SellInventory;
 import io.github.sidneiimatos.farmplugin.utils.API;
+import io.github.sidneiimatos.farmplugin.utils.ItemBuilder;
 import org.bukkit.Bukkit;
+import org.bukkit.Material;
 import org.bukkit.entity.Player;
 import org.bukkit.event.Event;
 import org.bukkit.event.EventHandler;
@@ -30,7 +32,13 @@ public class InventoryClick implements Listener {
                         if (isSlot1Empty(playerInventory) == true) {
                             p.sendMessage("§aTeleportado com sucesso para Farm!");
                             FarmPlugin.getInstance().getFarmcache().getCache().get(p.getName()).setFarming(true);
+                            p.getInventory().setItem(0, createItem());
                             p.teleport(API.getWarp("setentrada"));
+
+
+                            //Givar o item ao player
+
+
                             //FarmPlugin.inventarios_abertos.put(p, "mina");
                             API.sendActionbar(p, "§6§lFARM §8>> §floja.rede-legado.com");
                             p.sendTitle("§6§lFARM", "§fTeleportado com sucesso para farm!");
@@ -41,6 +49,7 @@ public class InventoryClick implements Listener {
                         p.sendMessage("§aTeleportado com sucesso para o Spawn!");
                         FarmPlugin.getInstance().getFarmcache().getCache().get(p.getName()).setFarming(false);
                         p.teleport(API.getWarp("setsaida"));
+                        p.getInventory().setItem(0, null);
                         p.sendTitle("§6§lFARM", "§fVocê saiu da farm!");
                     }
                     /*p.teleport(API.getWarp("setentrada"));
@@ -79,5 +88,9 @@ public class InventoryClick implements Listener {
             }
         }
         return true;
+    }
+
+    public ItemStack createItem() {
+        return new ItemStack(new ItemBuilder(Material.DIAMOND_AXE).setName("§eFerramenta").build());
     }
 }
